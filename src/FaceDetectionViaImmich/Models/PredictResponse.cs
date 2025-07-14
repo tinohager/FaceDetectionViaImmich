@@ -7,8 +7,10 @@ namespace FaceDetectionViaImmich.Models
         [JsonPropertyName("facial-recognition")]
         public FacialRecognition[] FacialRecognitions { get; set; }
 
-        public int imageHeight { get; set; }
+        [JsonPropertyName("imageHeight")]
+        public int ImageHeight { get; set; }
 
-        public int imageWidth { get; set; }
+        [JsonPropertyName("imageWidth")]
+        public int ImageWidth { get; set; }
     }
 }

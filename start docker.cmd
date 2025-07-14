@@ -1,0 +1,1 @@
+docker run -p 3003:3003 ghcr.io/immich-app/immich-machine-learning:release

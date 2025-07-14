@@ -73,7 +73,7 @@ namespace FaceDetectionViaImmich
             Console.WriteLine(message1);
         }
 
-        public async Task<string> PredictAsync(string imagePath)
+        public async Task<PredictResponse> PredictAsync(string imagePath)
         {
             var imageBytes = await File.ReadAllBytesAsync(imagePath);
 
@@ -110,41 +110,11 @@ namespace FaceDetectionViaImmich
             var responsePredict = await this._httpClient.PostAsync("/predict", form);
             responsePredict.EnsureSuccessStatusCode();
             var message = await responsePredict.Content.ReadAsStringAsync();
-            Console.WriteLine(responsePredict.StatusCode);
-            Console.WriteLine(message);
-
-            Console.WriteLine();
-
             var predictResponse = JsonSerializer.Deserialize<PredictResponse>(message);
 
-            foreach (var facialRecognition in predictResponse.FacialRecognitions)
-            {
-                var vectors1 = Helper.ParseTextData(facialRecognition.embedding);
-
-                foreach (var facialRecognition1 in predictResponse.FacialRecognitions)
-                {
-                    var vectors2 = Helper.ParseTextData(facialRecognition1.embedding);
-
-                    if (vectors1.SequenceEqual(vectors2))
-                    {
-                        continue;
-                    }
-
-                    var similarity = Helper.CosineSimilarity(vectors1, vectors2);
-                    if (similarity > 0.5)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Green;
-                    }
-
-                    Console.WriteLine($"{similarity:0.000}");
-                    Console.ResetColor();
-                }
-
-                Console.WriteLine("---------------------------------------------");
-
-            }
-
-            return message;
+            return predictResponse;
         }
     }
 }
+
+

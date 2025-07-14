@@ -1,13 +1,19 @@
-﻿namespace FaceDetectionViaImmich.Models
+﻿using System.Text.Json.Serialization;
+
+namespace FaceDetectionViaImmich.Models
 {
-    public class Boundingbox
+    public class BoundingBox
     {
-        public float x1 { get; set; }
+        [JsonPropertyName("x1")]
+        public float X1 { get; set; }
 
-        public float y1 { get; set; }
+        [JsonPropertyName("y1")]
+        public float Y1 { get; set; }
 
-        public float x2 { get; set; }
+        [JsonPropertyName("x2")]
+        public float X2 { get; set; }
 
-        public float y2 { get; set; }
+        [JsonPropertyName("y2")]
+        public float Y2 { get; set; }
     }
 }

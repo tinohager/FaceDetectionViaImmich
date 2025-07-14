@@ -1,11 +1,16 @@
-﻿namespace FaceDetectionViaImmich.Models
+﻿using System.Text.Json.Serialization;
+
+namespace FaceDetectionViaImmich.Models
 {
     public class FacialRecognition
     {
-        public Boundingbox boundingBox { get; set; }
+        [JsonPropertyName("boundingBox")]
+        public BoundingBox BoundingBox { get; set; }
 
-        public string embedding { get; set; }
+        [JsonPropertyName("embedding")]
+        public string Embedding { get; set; }
 
-        public float score { get; set; }
+        [JsonPropertyName("score")]
+        public float Score { get; set; }
     }
 }

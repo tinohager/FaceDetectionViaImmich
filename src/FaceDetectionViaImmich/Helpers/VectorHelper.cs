@@ -1,8 +1,6 @@
-﻿using System.Globalization;
+﻿namespace FaceDetectionViaImmich.Helpers;
 
-namespace FaceDetectionViaImmich;
-
-public static class Helper
+public static class VectorHelper
 {
     public static double CosineSimilarity(
         float[] vectorA,
@@ -25,10 +23,5 @@ public static class Helper
         }
 
         return dotProduct / (Math.Sqrt(magnitudeA) * Math.Sqrt(magnitudeB));
-    }
-
-    public static float[] ParseTextData(string x)
-    {
-        return x.TrimStart('[').TrimEnd(']').Split(',').Select(o => float.TryParse(o, NumberStyles.Float, CultureInfo.InvariantCulture, out var vector) ? vector : 0).ToArray();
     }
 }
