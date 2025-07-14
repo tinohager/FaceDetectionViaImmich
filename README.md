@@ -23,3 +23,4 @@ docker run -p 3003:3003 ghcr.io/immich-app/immich-machine-learning:release
 ## Sources
 - https://github.com/immich-app
 - https://github.com/deepinsight/insightface/tree/master/model_zoo
+- https://github.com/microsoft/DigiFace1M
