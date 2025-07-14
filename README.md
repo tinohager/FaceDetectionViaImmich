@@ -15,8 +15,12 @@ It sends image data to the container and retrieves face embeddings and similarit
 - Lightweight and easy to integrate
 
 ## Start Docker Container immich Machine-learning
+
+```
 docker run -p 3003:3003 ghcr.io/immich-app/immich-machine-learning:release
+```
 
 ## Sources
 - https://github.com/immich-app
 - https://github.com/deepinsight/insightface/tree/master/model_zoo
+- https://github.com/microsoft/DigiFace1M
