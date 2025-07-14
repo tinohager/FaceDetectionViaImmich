@@ -2,6 +2,8 @@
 
 A simple C# HTTP client for interacting with the Immich face recognition Docker container via its internal Web API.
 
+![faces from the DigiFace1M project](docs/example.jpg)
+
 ## Overview
 
 This client allows .NET applications to communicate with the machine learning service used by [Immich](https://github.com/immich-app/immich) for face detection and comparison.  
